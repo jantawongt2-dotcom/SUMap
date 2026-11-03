@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ | SU MAP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page profile-page">
+
+    <div class="hero-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="brand-logo">
+                    <img src="img/SUMap Logo.png" alt=""> SU MAP
+                </a>
+            </div>
+        </div>
+    </div>
+
+        <main class="profile-main">
+
+        <a href="index.html" class="profile-back" aria-label="กลับหน้าแรก">
+            <img src="img/back.svg" alt="">
+        </a>
+
+        <!-- รูปโปรไฟล์ + ชื่อ -->
+        <section class="profile-head">
+            <div class="profile-avatar-wrap">
+                <div class="profile-avatar" id="profileAvatar"></div>
+
+                <button type="button" class="avatar-camera" id="avatarCameraBtn" aria-label="เปลี่ยนรูปโปรไฟล์">
+                    <img src="img/camera.svg" alt="">
+                </button>
+
+                <input type="file" id="avatarInput" accept="image/*" hidden>
+            </div>
+
+            <div class="profile-name-card">
+                <h1 class="profile-username" id="profileName"></h1>
+            </div>
+        </section>
+
+        <!-- การ์ดข้อมูล -->
+        <section class="profile-info-row">
+
+            <div class="profile-box profile-details">
+                <h2 class="profile-box-title">ประวัติส่วนตัว</h2>
+                <div class="profile-row">
+                    <span class="profile-label">อีเมล</span>
+                    <span id="profileEmail"></span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">วันเกิด</span>
+                    <span id="profileBirthday"></span>
+                </div>
+                <div class="profile-row">
+                    <span class="profile-label">วันที่เริ่มใช้งาน</span>
+                    <span id="profileCreated"></span>
+                </div>
+            </div>
+
+            <!-- การตั้งค่า (ภาษา/แจ้งเตือน ยังเป็นหน้าตาอย่างเดียว ค่อยทำต่อทีหลัง) -->
+            <div class="profile-box profile-settings">
+                <h2 class="profile-box-title">การตั้งค่าบัญชี</h2>
+                <div class="setting-row">
+                    <span class="profile-label">รหัสผ่าน</span>
+                    <button type="button" class="setting-value setting-link" id="changePwBtn">
+                        เปลี่ยน
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+                    </button>
+                </div>
+                <div class="setting-row">
+                    <span class="profile-label">การแจ้งเตือน</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="switch-slider"></span>
+                    </label>
+                </div>
+            </div>
+
+        </section>
+
+        <p class="profile-msg" id="profileMsg"></p>
+        <button type="button" class="profile-logout" onclick="logout()">ออกจากระบบ</button>
+    </main>
+
+    <!-- หน้าต่างเปลี่ยนรหัสผ่าน -->
+    <div class="pw-modal" id="pwModal" hidden>
+        <form class="pw-card" id="pwForm" novalidate>
+            <h2 class="pw-title">เปลี่ยนรหัสผ่าน</h2>
+            <input type="password" class="pw-input" id="pwCurrent" placeholder="รหัสผ่านปัจจุบัน" autocomplete="current-password">
+            <input type="password" class="pw-input" id="pwNew" placeholder="รหัสผ่านใหม่ (อย่างน้อย 6 ตัวอักษร)" autocomplete="new-password">
+            <input type="password" class="pw-input" id="pwConfirm" placeholder="ยืนยันรหัสผ่านใหม่" autocomplete="new-password">
+            <p class="pw-msg" id="pwMsg"></p>
+            <div class="pw-actions">
+                <button type="button" class="pw-btn pw-btn-cancel" id="pwCancel">ยกเลิก</button>
+                <button type="submit" class="pw-btn pw-btn-save">บันทึก</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-top text-white d-none d-sm-block">
+            <div class="footer-container-fluid h-100">
+                <div class="footer-flex-row h-100">
+                    <div class="footer-col-brand">
+                        <h3 class="footer-SUMap">SU MAP</h3>
+                    </div>
+                    <div class="footer-col-info d-flex">
+                        <div class="footer-section-dev">
+                            <h6>ผู้พัฒนาระบบ</h6>
+                            <p>
+                                นักศึกษาคณะเทคโนโลยีสารสนเทศ<br>และการสื่อสารดิจิทัล มหาวิทยาลัยศิลปากร
+                            </p>
+                        </div>
+                        <div class="footer-section-about">
+                            <h6>เกี่ยวกับโครงการ</h6>
+                            <p>ระบบแผนที่ดิจิทัลและนำทาง</p>
+                            <p>ภายในมหาวิทยาลัย</p>
+                            <p>IG : @sumap_official</p>
+                            <p>LINE : @sumap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-white d-flex align-items-center justify-content-center">
+            <div class="font-footer-regular text-center">
+                © 2026 SUMap.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รายการแจ้งเตือน | SU MAP</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS ภายนอก -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS เฉพาะหน้าแจ้งเตือน (ต้องอยู่หลัง style.css) -->
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body class="page-notifications">
+
+    <!-- Hero Section & Navbar (หน้านี้ไม่มีช่องค้นหา) -->
+    <div class="hero-section hero-sub">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="brand-logo">
+                    <img src="img/SUMap Logo.png" alt=""> SU MAP
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- เนื้อหาหน้าแจ้งเตือน -->
+    <main class="noti-page">
+
+        <div class="noti-heading">
+            <a href="index.html" class="noti-back" aria-label="ย้อนกลับ">
+                <img src="img/back.svg" alt="">
+            </a>
+            <h1 class="noti-title">รายการแจ้งเตือน</h1>
+        </div>
+
+        <div class="noti-list">
+
+            <article class="noti-card">
+                <div class="noti-icon">
+                    <img src="img/laptopwhite.svg" alt="">
+                </div>
+                <div class="noti-body">
+                    <h2>ส่วนกลาง</h2>
+                    <p>ณ ตึกเรียนรวม อาคารเฉลิมพระเกียรติ 15 ชั้น<br class="br-ipad" class="br-iphone">ปิดให้ใช้บริการ 1 วัน<br class="br-macbook">เนื่องจาก มีการใช้สถานที่จัดงาน</p>
+                    <time>วันที่ 16/10/69</time>
+                </div>
+            </article>
+
+            <article class="noti-card">
+                <div class="noti-icon">
+                    <img src="img/toiletwhite.svg" alt="" class="icon-toilet">
+                </div>
+                <div class="noti-body">
+                    <h2>ห้องน้ำ</h2>
+                    <p>ณ อาคารเพชรรัตน-สุวัทนา ปิดให้บริการ วันที่ 19 ตุลาคม<br class="br-macbook">เนื่องจากมีการซ่อมบำรุงสถานที่</p>
+                    <time>วันที่ 15/10/69</time>
+                </div>
+            </article>
+
+            <article class="noti-card">
+                <div class="noti-icon">
+                    <img src="img/building.svg" alt="">
+                </div>
+                <div class="noti-body">
+                    <h2>อาคารคณะศึกษาศาสตร์</h2>
+                    <p>ณ อาคารศึกษาศาสตร เปิดให้ใช้บริการ 24 ชั่วโมง <br class="br-ipad" class="br-iphone">ตั้งแต่วันที่ 20 ตุลาคม<br class="br-macbook">ถึง 25 ตุลาคม เนื่องจากสัปดาห์สอบ</p>
+                    <time>วันที่ 11/10/69</time>
+                </div>
+            </article>
+
+            <article class="noti-card">
+                <div class="noti-icon">
+                    <img src="img/fork-knifewhite.svg" alt="">
+                </div>
+                <div class="noti-body">
+                    <h2>โรงอาหาร</h2>
+                    <p>ณ โรงอาหารเพชรรัตน์ เปิดให้บริการ วันเสาร์ 10 <br class="br-ipad" class="br-iphone">และวันอาทิตย์<br class="br-macbook">ที่ 11 ตุลาคม เนื่องจากมหาวิทยาลัยมีการจัดงาน</p>
+                    <time>วันที่ 9/10/69</time>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- 4. Footer (ซ่อนส่วนบนใน Mobile แสดงเฉพาะแถบ Copyright) -->
+    <footer class="footer-wrapper">
+        <div class="footer-top text-white d-none d-sm-block">
+            <div class="footer-container-fluid h-100">
+                <div class="footer-flex-row h-100">
+                    <div class="footer-col-brand">
+                        <h3 class="footer-SUMap">SU MAP</h3>
+                    </div>
+                    <div class="footer-col-info d-flex">
+                        <div class="footer-section-dev">
+                            <h6>ผู้พัฒนาระบบ</h6>
+                            <p>
+                                นักศึกษาคณะเทคโนโลยีสารสนเทศ<br>และการสื่อสารดิจิทัล มหาวิทยาลัยศิลปากร
+                            </p>
+                        </div>
+                        <div class="footer-section-about">
+                            <h6>เกี่ยวกับโครงการ</h6>
+                            <p>ระบบแผนที่ดิจิทัลและนำทาง</p>
+                            <p>ภายในมหาวิทยาลัย</p>
+                            <p>IG : @sumap_official</p>
+                            <p>LINE : @sumap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-white d-flex align-items-center justify-content-center">
+            <div class="font-footer-regular text-center">
+                © 2026 SUMap.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

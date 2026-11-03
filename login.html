@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เข้าสู่ระบบ | SU MAP</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body class="auth-page">
+
+    <!-- Hero (ตามดีไซน์หน้า login มีแค่โลโก้) -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="brand-logo">
+                    <img src="img/SUMap Logo.png" alt=""> SU MAP
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- การ์ด Login -->
+    <main class="auth-card">
+        <h1 class="auth-title">เข้าสู่ระบบ</h1>
+        <p class="auth-error" id="errorMsg"></p>
+
+        <form id="loginForm" class="auth-form auth-form--login" novalidate>
+            <input type="text" id="identifier" class="auth-input" placeholder="ชื่อผู้ใช้ / อีเมล" autocomplete="username">
+            <input type="password" id="password" class="auth-input" placeholder="รหัสผ่าน" autocomplete="current-password">
+            <button type="submit" class="auth-submit">เข้าสู่ระบบ</button>
+        </form>
+
+        <div class="auth-divider">or</div>
+
+        <div class="social-row">
+            <button type="button" class="social-btn" onclick="socialLogin('Google')">
+                <img src="img/google.svg" alt=""> GOOGLE
+            </button>
+            <button type="button" class="social-btn" onclick="socialLogin('Apple')">
+                <img src="img/apple.svg" alt=""> APPLE
+            </button>
+        </div>
+
+        <p class="auth-switch">
+            คุณยังไม่มีบัญชีใช่ไหม <a href="signin.html">สร้างบัญชีผู้ใช้</a>
+        </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-wrapper">
+        <div class="footer-top text-white d-none d-sm-block">
+            <div class="footer-container-fluid h-100">
+                <div class="footer-flex-row h-100">
+                    <div class="footer-col-brand">
+                        <h3 class="footer-SUMap">SU MAP</h3>
+                    </div>
+                    <div class="footer-col-info d-flex">
+                        <div class="footer-section-dev">
+                            <h6>ผู้พัฒนาระบบ</h6>
+                            <p>
+                                นักศึกษาคณะเทคโนโลยีสารสนเทศ<br>และการสื่อสารดิจิทัล มหาวิทยาลัยศิลปากร
+                            </p>
+                        </div>
+                        <div class="footer-section-about">
+                            <h6>เกี่ยวกับโครงการ</h6>
+                            <p>ระบบแผนที่ดิจิทัลและนำทาง</p>
+                            <p>ภายในมหาวิทยาลัย</p>
+                            <p>IG : @sumap_official</p>
+                            <p>LINE : @sumap</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom text-white d-flex align-items-center justify-content-center">
+            <div class="font-footer-regular text-center">
+                © 2026 SUMap.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
